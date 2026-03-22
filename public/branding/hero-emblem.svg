@@ -1,0 +1,16 @@
+<svg width="620" height="760" viewBox="0 0 620 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="620" height="760" rx="36" fill="#110D0E"/>
+  <circle cx="310" cy="380" r="220" fill="url(#paint0_radial)" fill-opacity="0.45"/>
+  <path d="M310 118L355 228L474 240L382 315L410 434L310 372L210 434L238 315L146 240L265 228L310 118Z" stroke="#E7B67A" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M310 222C370.751 222 420 271.249 420 332C420 399.59 360.667 452.426 310 514C259.333 452.426 200 399.59 200 332C200 271.249 249.249 222 310 222Z" fill="#1C1517" stroke="#F56C5B" stroke-width="8"/>
+  <path d="M244 338C268 323.333 287.333 297.333 302 260C316.667 297.333 336 323.333 360 338C336 352.667 316.667 379.333 302 418C287.333 379.333 268 352.667 244 338Z" fill="#E7B67A" fill-opacity="0.9"/>
+  <path d="M196 574C238.985 534.663 276.985 513.496 310 510.5C343.015 513.496 381.015 534.663 424 574" stroke="#F3E3D2" stroke-opacity="0.8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M208 632H412" stroke="#E7B67A" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="10 10"/>
+  <text x="310" y="628" fill="#F4ECE3" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" letter-spacing="6">INKA TATOO</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(310 380) rotate(90) scale(220)">
+      <stop stop-color="#F56C5B"/>
+      <stop offset="1" stop-color="#F56C5B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
