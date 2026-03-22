@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Raleway } from "next/font/google";
 import "./globals.css";
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-serif",
+});
+
 export const metadata: Metadata = {
-  title: "Inka Tatoo | Arte que deja huella",
+  title: "ALEX MELENDEZ PROFESIONAL TATTOO",
   description:
-    "Landing page para Inka Tatoo inspirada en la estructura de un estudio premium: tatuajes, piercings, portafolio, equipo y contacto.",
+    "ALEX MELENDEZ PROFESIONAL TATTOO. Tatuajes, perforaciones, portafolio, equipo, valores, FAQ y contacto.",
 };
 
 export default function RootLayout({
@@ -14,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={`${raleway.variable} ${cormorant.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

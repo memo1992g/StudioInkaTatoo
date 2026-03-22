@@ -1,236 +1,154 @@
 import Image from "next/image";
+import ContactForm from "./contact-form";
+import MobileNav from "./mobile-nav";
+import ValuesMetrics from "./values-metrics";
 
 const services = [
   {
-    title: "Tatuajes personalizados",
+    title: "Tatuajes",
     description:
-      "Diseños hechos a medida con enfoque en composición, detalle y lectura estética de la piel.",
-    accent: "01",
+      "Diseños personalizados, composición cuidada y ejecución orientada a convertir la piel en una pieza con historia.",
+    image: "/media/service-tattoo-machine.png",
   },
   {
-    title: "Piercing profesional",
+    title: "Piercings",
     description:
-      "Perforaciones seguras, con protocolo higiénico riguroso, joyería premium y asesoría de curación.",
-    accent: "02",
+      "Perforaciones con protocolo higiénico riguroso, acompañamiento claro y un enfoque profesional desde la cita inicial.",
+    image: "/media/service-piercing.png",
   },
   {
-    title: "Dirección creativa",
+    title: "Supply",
     description:
-      "Aterrizamos ideas, referencias y conceptos para convertirlos en piezas coherentes y memorables.",
-    accent: "03",
+      "Productos seleccionados y acompañamiento para extender la experiencia del estudio con el mismo estándar de detalle y confianza.",
+    image: "/media/service-glue.png",
   },
 ];
 
-const gallery = [
-  {
-    title: "Realismo ritual",
-    image: "/art/gallery-01.svg",
-    tag: "Black & Grey",
-  },
-  {
-    title: "Ornamental andino",
-    image: "/art/gallery-02.svg",
-    tag: "Fine Line",
-  },
-  {
-    title: "Serpiente solar",
-    image: "/art/gallery-03.svg",
-    tag: "Neo tradicional",
-  },
-  {
-    title: "Máscara sagrada",
-    image: "/art/gallery-04.svg",
-    tag: "Grabado",
-  },
-  {
-    title: "Cóndor en vuelo",
-    image: "/art/gallery-05.svg",
-    tag: "Ilustrativo",
-  },
-  {
-    title: "Floral ceremonial",
-    image: "/art/gallery-06.svg",
-    tag: "Blackwork",
-  },
-];
-
-const team = [
-  {
-    name: "Amaru",
-    role: "Director artístico",
-    image: "/art/artist-01.svg",
-    description:
-      "Especialista en realismo oscuro y composición narrativa. Convierte ideas complejas en piezas sólidas y atemporales.",
-  },
-  {
-    name: "Killa",
-    role: "Tattoo artist",
-    image: "/art/artist-02.svg",
-    description:
-      "Enfocada en línea fina, botánica y ornamento. Su trazo es limpio, delicado y muy preciso.",
-  },
-  {
-    name: "Inti",
-    role: "Piercer & curator",
-    image: "/art/artist-03.svg",
-    description:
-      "Responsable del área de perforación y joyería. Prioriza seguridad, estética y acompañamiento post servicio.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Me ayudaron a convertir una idea emocional en una pieza elegante. El resultado superó por mucho mi expectativa.",
-    name: "Valeria M.",
-  },
-  {
-    quote:
-      "El estudio se siente premium desde que llegas. Todo fue claro, higiénico y muy bien cuidado.",
-    name: "Ricardo A.",
-  },
-  {
-    quote:
-      "Mi piercing cicatrizó excelente y la atención fue súper cálida. Se nota que dominan el proceso.",
-    name: "Fernanda G.",
-  },
+const works = [
+  "/media/work-01.jpg",
+  "/media/work-02.jpg",
+  "/media/work-03.jpg",
+  "/media/work-04.jpeg",
 ];
 
 const faqs = [
   {
-    question: "¿Cómo puedo cotizar mi tatuaje?",
+    question: "¿Cómo puedo agendar una cita?",
     answer:
-      "Comparte tamaño aproximado, zona del cuerpo, referencias visuales y una breve descripción del concepto. Con eso preparamos una propuesta inicial.",
+      "Puedes escribirnos por WhatsApp o completar el formulario para revisar tu idea, referencias y disponibilidad.",
   },
   {
-    question: "¿Trabajan por cita o por walk-in?",
+    question: "¿Cuáles son las formas de pago?",
     answer:
-      "La experiencia principal es por cita para cuidar el diseño y el tiempo de cada cliente, aunque algunos espacios pueden abrirse para piezas pequeñas.",
+      "Trabajamos con efectivo, transferencias y opciones adicionales que el estudio te confirma al momento de reservar.",
   },
   {
-    question: "¿Qué cuidados siguen para tatuajes y piercings?",
+    question: "¿Manejan meses sin intereses?",
     answer:
-      "Usamos material estéril, estaciones preparadas por servicio y guía de aftercare escrita para asegurar una curación adecuada.",
+      "La disponibilidad de promociones y formas de financiamiento se confirma según campaña y tipo de servicio.",
   },
   {
-    question: "¿Qué estilos puede desarrollar Inka Tatoo?",
+    question: "¿Qué debo llevar a mi valoración?",
     answer:
-      "Realismo, black & grey, fine line, ornamental, ilustrativo y propuestas conceptuales desarrolladas junto con el cliente.",
+      "Tamaño aproximado, zona del cuerpo, referencias visuales y una descripción breve del concepto que deseas desarrollar.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="page-shell">
-      <section className="hero" id="inicio">
-        <div className="hero__overlay" />
-        <header className="topbar">
-          <div>
-            <p className="eyebrow">Inka Tatoo Studio</p>
-            <p className="topbar__sub">
-              Arte corporal, identidad y ritual contemporáneo
-            </p>
-          </div>
-          <nav className="topbar__nav" aria-label="Principal">
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#trabajos">Trabajos</a>
-            <a href="#equipo">Equipo</a>
-            <a href="#contacto">Contacto</a>
-          </nav>
-        </header>
+    <main className="monasterio-page">
+      <header className="site-header">
+        <a
+          className="site-logo"
+          href="#inicio"
+          aria-label="Alex Melendez Professional Tattoo"
+        >
+          <Image
+            src="/branding/alex-melendez-logo-transparent.png"
+            alt="Alex Melendez Professional Tattoo"
+            width={220}
+            height={202}
+            priority
+          />
+        </a>
+        <nav className="site-nav" aria-label="Principal">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#trabajos">Trabajos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <MobileNav />
+      </header>
 
-        <div className="hero__content">
-          <div className="hero__copy">
-            <p className="eyebrow">
-              Inspirado en la experiencia premium de un estudio editorial
-            </p>
-            <h1>
-              Una landing de alto impacto para presentar a Inka Tatoo con fuerza
-              visual.
-            </h1>
-            <p className="hero__lead">
-              Construimos una página tipo one-page en Next.js, con narrativa
-              clara, estética oscura, portafolio, equipo, FAQ y contacto para
-              convertir visitas en citas.
-            </p>
-            <div className="hero__actions">
-              <a className="button button--primary" href="#contacto">
-                Agendar valoración
-              </a>
-              <a className="button button--ghost" href="#trabajos">
-                Ver portafolio
-              </a>
-            </div>
-            <ul className="hero__metrics" aria-label="Valores destacados">
-              <li>
-                <strong>100%</strong>
-                <span>Diseño personalizado</span>
-              </li>
-              <li>
-                <strong>3</strong>
-                <span>Áreas clave del servicio</span>
-              </li>
-              <li>
-                <strong>1</strong>
-                <span>Experiencia unificada de marca</span>
-              </li>
-            </ul>
+      <section className="hero-block" id="inicio">
+        <video
+          className="hero-video"
+          src="/media/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/media/contact-bg.jpg"
+        />
+        <div className="hero-overlay" />
+        <div className="hero-inner">
+          <p className="section-kicker">Alex Melendez Professional Tattoo</p>
+          <h1 className="hero-title">Alex Melendez Professional Tattoo</h1>
+          <p className="hero-copy">
+            En Alex Melendez Professional Tattoo creemos que tu piel es un
+            lienzo con historia. Aquí te acompañamos a plasmar lo que eres y lo
+            que deseas expresar.
+          </p>
+          <div className="hero-actions">
+            <a className="primary-button" href="#contacto">
+              Agenda tu cita
+            </a>
+            <a className="ghost-button" href="#trabajos">
+              Ver trabajos
+            </a>
           </div>
+        </div>
+        <a className="hero-scroll" href="#nosotros">
+          Desliza
+        </a>
+      </section>
 
-          <div className="hero__art">
-            <div className="hero__badge">Nueva identidad visual</div>
-            <Image
-              src="/branding/hero-emblem.svg"
-              alt="Emblema artístico de Inka Tatoo"
-              width={620}
-              height={760}
-              priority
-            />
-          </div>
+      <section className="content-section intro-section" id="nosotros">
+        <div className="section-heading">
+          <p className="section-kicker">Nosotros</p>
+          <h2>Alex Melendez Professional Tattoo</h2>
+        </div>
+        <div className="section-lead">
+          <p>
+            En Alex Melendez Professional Tattoo creemos que tu piel es un
+            lienzo con historia. Nuestra pasión por el arte corporal se une a
+            una ejecución precisa para transformar ideas, símbolos y recuerdos
+            en piezas con identidad.
+          </p>
+          <p>
+            Este sitio está pensado como una experiencia de una sola página,
+            donde puedes recorrer nuestros servicios, trabajos, valores,
+            preguntas frecuentes y datos de contacto de forma clara y continua.
+          </p>
         </div>
       </section>
 
-      <section className="section section--split" id="nosotros">
-        <div>
-          <p className="section__label">Nosotros</p>
-          <h2>
-            Una estructura inspirada en Monasterio Tattoo, reinterpretada para
-            una marca con identidad propia.
-          </h2>
+      <section className="content-section" id="servicios">
+        <div className="section-heading">
+          <p className="section-kicker">Servicios</p>
+          <h2>Lo que hacemos</h2>
         </div>
-        <div className="stack-lg">
-          <p>
-            La referencia se tomó por su ritmo de navegación y por cómo conecta
-            historia, servicios, portafolio, testimonios, equipo y contacto en
-            una sola narrativa. Para Inka Tatoo se diseñó una versión más
-            editorial, con símbolos propios, colorimetría volcánica y piezas
-            visuales originales en SVG.
-          </p>
-          <blockquote className="quote-card">
-            “La tinta no solo decora el cuerpo; también ordena recuerdos,
-            símbolos y decisiones.”
-          </blockquote>
-        </div>
-      </section>
-
-      <section className="section" id="servicios">
-        <p className="section__label">Servicios</p>
-        <div className="section__header">
-          <h2>
-            Un bloque comercial claro para vender la experiencia completa del
-            estudio.
-          </h2>
-          <p>
-            Se replica la lógica de la página de referencia: servicios
-            principales visibles desde el primer scroll, mensajes concretos y
-            llamadas a la acción enfocadas en conversión.
-          </p>
-        </div>
-        <div className="card-grid card-grid--services">
+        <div className="services-grid">
           {services.map((service) => (
-            <article key={service.title} className="feature-card">
-              <span className="feature-card__accent">{service.accent}</span>
+            <article key={service.title} className="service-card">
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={70}
+                height={70}
+              />
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </article>
@@ -238,131 +156,70 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--portfolio" id="trabajos">
-        <div className="section__header">
-          <div>
-            <p className="section__label">Trabajos</p>
-            <h2>Arte original para maquetar el portafolio desde el día uno.</h2>
-          </div>
-          <p>
-            Como parte del entregable se generaron ilustraciones propias para
-            hero, galería y equipo, de modo que el sitio ya se vea completo
-            mientras llegan fotografías reales del estudio.
-          </p>
+      <section className="content-section" id="trabajos">
+        <div className="section-heading">
+          <p className="section-kicker">Trabajos</p>
+          <h2>Nuestro Portafolio</h2>
         </div>
-
-        <div className="gallery-grid">
-          {gallery.map((item) => (
-            <article key={item.title} className="gallery-card">
-              <div className="gallery-card__image">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={600}
-                  height={600}
-                />
-              </div>
-              <div className="gallery-card__body">
-                <span>{item.tag}</span>
-                <h3>{item.title}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section--dark">
-        <div className="section__header">
-          <div>
-            <p className="section__label">Clientes</p>
-            <h2>
-              Prueba social y confianza, igual que en el sitio de referencia.
-            </h2>
-          </div>
-          <p>
-            La home incluye reseñas breves para reducir fricción y reforzar la
-            percepción de calidad, seguridad e intención artística.
-          </p>
-        </div>
-        <div className="card-grid testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <article key={testimonial.name} className="testimonial-card">
-              <p>“{testimonial.quote}”</p>
-              <strong>{testimonial.name}</strong>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section" id="equipo">
-        <div className="section__header">
-          <div>
-            <p className="section__label">Equipo</p>
-            <h2>
-              Presentación del crew con perfil, especialidad e ilustración
-              dedicada.
-            </h2>
-          </div>
-          <p>
-            Esta sección conserva la intención del sitio analizado: humanizar al
-            estudio mostrando a sus artistas y reforzar la confianza en cada
-            disciplina.
-          </p>
-        </div>
-        <div className="card-grid team-grid">
-          {team.map((member) => (
-            <article key={member.name} className="team-card">
+        <div className="works-grid">
+          {works.map((image, index) => (
+            <article key={image} className="work-card">
               <Image
-                src={member.image}
-                alt={member.name}
-                width={460}
-                height={520}
+                src={image}
+                alt={`Trabajo ${index + 1}`}
+                width={900}
+                height={1100}
               />
-              <div className="team-card__body">
-                <p className="team-card__role">{member.role}</p>
-                <h3>{member.name}</h3>
-                <p>{member.description}</p>
-              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--values">
-        <div className="values-panel">
-          <div>
-            <p className="section__label">Valores</p>
-            <h2>Excelencia, seguridad, creatividad y seguimiento.</h2>
-            <p>
-              Igual que la referencia, el discurso de marca aterriza en
-              atributos medibles para que la experiencia del estudio se perciba
-              profesional, cuidada y coherente.
-            </p>
-          </div>
-          <div className="values-metrics">
-            {["Excelencia", "Seguridad", "Creatividad", "Compromiso"].map(
-              (item) => (
-                <div key={item}>
-                  <strong>100%</strong>
-                  <span>{item}</span>
-                </div>
-              ),
-            )}
-          </div>
+      <section className="content-section testimonials-section">
+        <div className="section-heading">
+          <p className="section-kicker">Clientes</p>
+          <h2>Experiencias que dejan huella</h2>
+        </div>
+        <div className="testimonial-strip">
+          {[
+            "Excelente atención, profesionalismo y un resultado impecable desde la primera sesión.",
+            "El estudio se siente premium, serio y muy bien cuidado en cada detalle.",
+            "Desde la valoración hasta el seguimiento, todo el proceso fue claro y confiable.",
+          ].map((quote) => (
+            <blockquote key={quote} className="testimonial-card">
+              "{quote}"
+            </blockquote>
+          ))}
         </div>
       </section>
 
-      <section className="section section--faq">
-        <div className="section__header">
-          <div>
-            <p className="section__label">FAQ</p>
-            <h2>Preguntas frecuentes para reducir dudas antes de contactar.</h2>
+      <section className="content-section values-section">
+        <div className="values-copy">
+          <div className="section-heading">
+            <p className="section-kicker">Valores</p>
+            <h2>Excelencia, cuidado y autenticidad</h2>
           </div>
           <p>
-            Se mantuvo esta sección porque en el sitio base ayuda mucho a
-            convertir: responde objeciones, explica el proceso y ordena la
-            comunicación comercial.
+            Cada decisión, cada proceso y cada pieza se trabajan con dedicación,
+            cuidado y autenticidad para construir una experiencia profesional y
+            humana en cada visita.
           </p>
+          <ValuesMetrics />
+        </div>
+        <div className="values-image">
+          <Image
+            src="/media/values-image.jpg"
+            alt="Interior de Alex Melendez Professional Tattoo"
+            width={1200}
+            height={980}
+          />
+        </div>
+      </section>
+
+      <section className="content-section" id="faq">
+        <div className="section-heading">
+          <p className="section-kicker">FAQ</p>
+          <h2>Preguntas Frecuentes</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (
@@ -374,63 +231,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--contact" id="contacto">
-        <div className="contact-card">
-          <div className="contact-card__copy">
-            <p className="section__label">Contacto</p>
-            <h2>Tu idea empieza aquí.</h2>
-            <p>
-              Dejé una estructura lista para captación: datos del estudio,
-              horarios, CTA principal y formulario base para que luego conectes
-              el envío real con el canal que prefieras.
-            </p>
-            <ul className="contact-list">
-              <li>
-                <strong>Email:</strong> hola@inkatatoo.com
-              </li>
-              <li>
-                <strong>WhatsApp:</strong> +52 33 0000 0000
-              </li>
-              <li>
-                <strong>Horario:</strong> Lun - Sáb / 11:00 a 20:00
-              </li>
-              <li>
-                <strong>Ubicación:</strong> Guadalajara, Jalisco · Dirección
-                editable
-              </li>
-            </ul>
+      <section className="contact-section" id="contacto">
+        <div className="contact-overlay" />
+        <div className="contact-inner">
+          <div className="section-heading">
+            <p className="section-kicker">Contacto</p>
+            <h2>Agenda tu cita</h2>
           </div>
-          <form className="contact-form">
-            <label>
-              Nombre
-              <input type="text" name="name" placeholder="Tu nombre" />
-            </label>
-            <label>
-              Servicio
-              <select name="service" defaultValue="">
-                <option value="" disabled>
-                  Elige una opción
-                </option>
-                <option>Tatuaje personalizado</option>
-                <option>Piercing</option>
-                <option>Valoración de proyecto</option>
-              </select>
-            </label>
-            <label>
-              Mensaje
-              <textarea
-                name="message"
-                rows={5}
-                placeholder="Cuéntanos tu idea"
-              />
-            </label>
-            <button
-              type="submit"
-              className="button button--primary button--full"
-            >
-              Enviar solicitud
-            </button>
-          </form>
+          <div className="contact-grid">
+            <div className="contact-copy">
+              <p>
+                Escríbenos para cotizar tu idea, recibir una valoración y
+                reservar tu espacio dentro del estudio.
+              </p>
+              <ul className="contact-list">
+                <li>
+                  <strong>Dirección:</strong>{" "}
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Calle+El+Pedregal+%2310,+Jardines+de+la+Hacienda,+Santa+Tecla,+Nueva+San+Salvador,+CP+1501,+1502"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Calle El Pedregal #10, Jardines de la Hacienda, Santa
+                    Tecla, Nueva San Salvador, CP 1501, 1502
+                  </a>
+                </li>
+                <li>
+                  <strong>WhatsApp:</strong>{" "}
+                  <a href="https://wa.me/50371111664" target="_blank" rel="noreferrer">
+                    +503 7111-1664
+                  </a>
+                </li>
+                <li>
+                  <strong>Instagram:</strong>{" "}
+                  <a
+                    href="https://www.instagram.com/inka_alexmelendez"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    @inka_alexmelendez
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <ContactForm />
+          </div>
         </div>
       </section>
     </main>
