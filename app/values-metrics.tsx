@@ -2,11 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const metrics = ["Arte", "Seguridad", "Técnica", "Seguimiento"];
 const TARGET_VALUE = 100;
 const ANIMATION_DURATION = 1400;
 
-export default function ValuesMetrics() {
+type ValuesMetricsProps = {
+  labels: string[];
+};
+
+export default function ValuesMetrics({ labels }: ValuesMetricsProps) {
   const [value, setValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -54,7 +57,7 @@ export default function ValuesMetrics() {
 
   return (
     <div ref={sectionRef} className="values-metrics">
-      {metrics.map((metric) => (
+      {labels.map((metric) => (
         <div key={metric}>
           <strong>{value}%</strong>
           <span>{metric}</span>

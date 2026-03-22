@@ -2,9 +2,21 @@
 
 const WHATSAPP_NUMBER = "50371111664";
 
-const services = ["Tatuaje", "Piercing", "Valoración"];
+type ContactFormProps = {
+  labels: {
+    name: string;
+    phone: string;
+    service: string;
+    message: string;
+    servicePlaceholder: string;
+    submit: string;
+    whatsappIntro: string;
+    emptyValue: string;
+    services: string[];
+  };
+};
 
-export default function ContactForm() {
+export default function ContactForm({ labels }: ContactFormProps) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -17,11 +29,11 @@ export default function ContactForm() {
     const message = String(formData.get("message") ?? "").trim();
 
     const text = [
-      "Hola, quiero agendar una cita en Alex Melendez Professional Tattoo.",
-      `Nombre: ${name || "No especificado"}`,
-      `Teléfono: ${phone || "No especificado"}`,
-      `Servicio: ${service || "No especificado"}`,
-      `Mensaje: ${message || "No especificado"}`,
+      labels.whatsappIntro,
+      `${labels.name}: ${name || labels.emptyValue}`,
+      `${labels.phone}: ${phone || labels.emptyValue}`,
+      `${labels.service}: ${service || labels.emptyValue}`,
+      `${labels.message}: ${message || labels.emptyValue}`,
     ].join("\n");
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -31,30 +43,30 @@ export default function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <label>
-        Nombre
-        <input type="text" name="name" placeholder="Tu nombre" />
+        {labels.name}
+        <input type="text" name="name" placeholder={labels.name} />
       </label>
       <label>
-        Teléfono
-        <input type="tel" name="phone" placeholder="Tu teléfono" />
+        {labels.phone}
+        <input type="tel" name="phone" placeholder={labels.phone} />
       </label>
       <label>
-        Servicio
+        {labels.service}
         <select name="service" defaultValue="">
           <option value="" disabled>
-            Selecciona un servicio
+            {labels.servicePlaceholder}
           </option>
-          {services.map((service) => (
+          {labels.services.map((service) => (
             <option key={service}>{service}</option>
           ))}
         </select>
       </label>
       <label>
-        Mensaje
-        <textarea name="message" rows={5} placeholder="Cuéntanos tu idea" />
+        {labels.message}
+        <textarea name="message" rows={5} placeholder={labels.message} />
       </label>
       <button type="submit" className="primary-button primary-button--full">
-        Enviar por WhatsApp
+        {labels.submit}
       </button>
     </form>
   );

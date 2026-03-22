@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-const links = [
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#trabajos", label: "Trabajos" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contacto", label: "Contacto" },
-];
+type MobileNavProps = {
+  links: {
+    href: string;
+    label: string;
+  }[];
+  ariaLabel: string;
+};
 
-export default function MobileNav() {
+export default function MobileNav({ links, ariaLabel }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function MobileNav() {
         className={`mobile-nav-toggle${isOpen ? " is-open" : ""}`}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
-        aria-label="Abrir menú"
+        aria-label={ariaLabel}
         onClick={() => setIsOpen((current) => !current)}
       >
         <span />
@@ -44,6 +44,14 @@ export default function MobileNav() {
             {link.label}
           </a>
         ))}
+        <div className="mobile-menu__locales">
+          <a href="/es" onClick={() => setIsOpen(false)}>
+            ES
+          </a>
+          <a href="/en" onClick={() => setIsOpen(false)}>
+            EN
+          </a>
+        </div>
       </div>
     </>
   );
