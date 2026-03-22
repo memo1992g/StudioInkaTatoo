@@ -279,6 +279,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="powered-section" aria-label="Potenciado por">
+        <p>Esta página está potenciada por</p>
+        <Image
+          src="/branding/powered-by-logo.png"
+          alt="Logo del estudio"
+          width={220}
+          height={147}
+        />
+      </section>
     </main>
   );
 }
