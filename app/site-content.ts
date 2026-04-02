@@ -214,18 +214,20 @@ export const siteContent: Record<Locale, SiteContent> = {
     poweredBy: "Esta página está potenciada por",
     seo: {
       title:
-        "Tatuajes en El Salvador | Alex Melendez Professional Tattoo",
+        "Estudio de tatuajes en Santa Tecla, El Salvador | Alex Melendez Inka",
       description:
-        "Estudio de tatuajes en Santa Tecla, El Salvador. Tatuajes personalizados, piercings, portafolio, citas por WhatsApp y atención profesional con Alex Melendez Professional Tattoo.",
+        "Alex Melendez Inka: estudio profesional de tatuajes y piercings en Santa Tecla, El Salvador. Atención para clientes locales y turistas. Reserva por WhatsApp.",
       keywords: [
         "tatuajes en el salvador",
         "tatuador en santa tecla",
         "estudio de tatuajes en santa tecla",
         "hacerme un tatuaje en el salvador",
+        "quiero tatuarme en el salvador",
         "tatuajes personalizados el salvador",
         "piercings en santa tecla",
+        "tatuajes para turistas en el salvador",
         "agenda tatuaje el salvador",
-        "alex melendez professional tattoo",
+        "alex melendez inka",
       ],
     },
   },
@@ -353,17 +355,22 @@ export const siteContent: Record<Locale, SiteContent> = {
     poweredBy: "This website is powered by",
     seo: {
       title:
-        "Tattoo Artist in El Salvador | Alex Melendez Professional Tattoo",
+        "Tattoo Studio in Santa Tecla, El Salvador | Alex Melendez Inka",
       description:
-        "Tattoo studio in Santa Tecla, El Salvador. Custom tattoos, piercings, portfolio, WhatsApp booking, and professional service by Alex Melendez Professional Tattoo.",
+        "Alex Melendez Inka is a premium tattoo and piercing studio in Santa Tecla, El Salvador for local and international clients. Book your appointment on WhatsApp.",
       keywords: [
         "tattoo artist in el salvador",
+        "tattoo studio in el salvador",
+        "best tattoo artist in el salvador",
         "tattoo shop in santa tecla",
+        "tattoo studio in santa tecla",
         "custom tattoos el salvador",
+        "i want to get a tattoo in el salvador",
+        "traveling to el salvador tattoo appointment",
         "book a tattoo in el salvador",
         "tattoo studio santa tecla",
         "piercing studio el salvador",
-        "alex melendez professional tattoo",
+        "alex melendez inka",
       ],
     },
   },
