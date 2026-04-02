@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const pageUrl = `${siteUrl}/en/get-a-tattoo-in-el-salvador`;
 
@@ -26,7 +24,7 @@ const faqItems = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata = {
   title:
     "Get a Tattoo in El Salvador | Premium Tattoo Studio in Santa Tecla",
   description:

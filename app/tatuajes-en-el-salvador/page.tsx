@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const pageUrl = `${siteUrl}/tatuajes-en-el-salvador`;
 
@@ -26,7 +24,7 @@ const faqItems = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata = {
   title:
     "Tatuajes en El Salvador | Estudio profesional en Santa Tecla - Alex Melendez Inka",
   description:
