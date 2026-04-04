@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { locales } from "./app/site-content";
 
+const publicPaths = ["/tatuajes-en-el-salvador"];
+
 function getPreferredLocale(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language")?.toLowerCase();
 
@@ -20,6 +22,10 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.includes(".")
   ) {
+    return NextResponse.next();
+  }
+
+  if (publicPaths.includes(pathname)) {
     return NextResponse.next();
   }
 

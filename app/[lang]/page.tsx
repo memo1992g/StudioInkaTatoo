@@ -267,8 +267,25 @@ export default async function Home({
               <ul className="contact-list">
                 <li>
                   <strong>{content.contact.addressLabel}:</strong>{" "}
-                  <a href={addressUrl} target="_blank" rel="noreferrer">
-                    {content.contact.address}
+                  <a
+                    href={addressUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-cta icon-cta--maps"
+                    aria-label={
+                      locale === "es"
+                        ? "Abrir dirección en Google Maps"
+                        : "Open address in Google Maps"
+                    }
+                  >
+                    <span className="icon-cta__glyph" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="img">
+                        <path d="M12 2.5c-4.03 0-7.3 3.12-7.3 6.97 0 5.38 7.3 12.03 7.3 12.03s7.3-6.65 7.3-12.03c0-3.85-3.27-6.97-7.3-6.97Zm0 9.54a2.58 2.58 0 1 1 0-5.16 2.58 2.58 0 0 1 0 5.16Z" />
+                      </svg>
+                    </span>
+                    <span className="icon-cta__text">
+                      {locale === "es" ? "Abrir en Google Maps" : "Open in Google Maps"}
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -277,8 +294,19 @@ export default async function Home({
                     href="https://wa.me/50371111664"
                     target="_blank"
                     rel="noreferrer"
+                    className="icon-cta icon-cta--whatsapp"
+                    aria-label={
+                      locale === "es"
+                        ? "Abrir conversación de WhatsApp"
+                        : "Open WhatsApp chat"
+                    }
                   >
-                    +503 7111-1664
+                    <span className="icon-cta__glyph" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="img">
+                        <path d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0 11.93 11.93 0 0 0 1.8 17.83L0 24l6.36-1.74a11.98 11.98 0 0 0 5.74 1.47h.01c6.57 0 11.92-5.34 11.92-11.91 0-3.18-1.23-6.17-3.5-8.34Zm-8.41 18.2h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.78 1.03 1.01-3.69-.24-.38a9.9 9.9 0 0 1-1.54-5.25c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 0 1 2.9 7.01c0 5.46-4.44 9.9-9.87 9.9Zm5.43-7.42c-.3-.15-1.75-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.15-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.7.3 1.24.47 1.66.6.7.22 1.34.19 1.84.12.56-.08 1.75-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z" />
+                      </svg>
+                    </span>
+                    <span className="icon-cta__text">+503 7111-1664</span>
                   </a>
                 </li>
                 <li>
@@ -287,8 +315,19 @@ export default async function Home({
                     href="https://www.instagram.com/inka_alexmelendez"
                     target="_blank"
                     rel="noreferrer"
+                    className="icon-cta icon-cta--instagram"
+                    aria-label={
+                      locale === "es"
+                        ? "Abrir perfil de Instagram"
+                        : "Open Instagram profile"
+                    }
                   >
-                    @inka_alexmelendez
+                    <span className="icon-cta__glyph" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="img">
+                        <path d="M7.2 2.8h9.6a4.4 4.4 0 0 1 4.4 4.4v9.6a4.4 4.4 0 0 1-4.4 4.4H7.2a4.4 4.4 0 0 1-4.4-4.4V7.2a4.4 4.4 0 0 1 4.4-4.4Zm9.6 16a2 2 0 0 0 2-2V7.2a2 2 0 0 0-2-2H7.2a2 2 0 0 0-2 2v9.6a2 2 0 0 0 2 2h9.6Zm-4.8-11a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm0 6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm4.9-6.73a1.02 1.02 0 1 1 0-2.04 1.02 1.02 0 0 1 0 2.04Z" />
+                      </svg>
+                    </span>
+                    <span className="icon-cta__text">@inka_alexmelendez</span>
                   </a>
                 </li>
               </ul>
