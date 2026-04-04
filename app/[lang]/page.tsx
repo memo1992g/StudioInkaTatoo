@@ -267,8 +267,25 @@ export default async function Home({
               <ul className="contact-list">
                 <li>
                   <strong>{content.contact.addressLabel}:</strong>{" "}
-                  <a href={addressUrl} target="_blank" rel="noreferrer">
-                    {content.contact.address}
+                  <a
+                    href={addressUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-cta icon-cta--maps"
+                    aria-label={
+                      locale === "es"
+                        ? "Abrir dirección en Google Maps"
+                        : "Open address in Google Maps"
+                    }
+                  >
+                    <span className="icon-cta__glyph" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="img">
+                        <path d="M12 2.5c-4.03 0-7.3 3.12-7.3 6.97 0 5.38 7.3 12.03 7.3 12.03s7.3-6.65 7.3-12.03c0-3.85-3.27-6.97-7.3-6.97Zm0 9.54a2.58 2.58 0 1 1 0-5.16 2.58 2.58 0 0 1 0 5.16Z" />
+                      </svg>
+                    </span>
+                    <span className="icon-cta__text">
+                      {locale === "es" ? "Abrir en Google Maps" : "Open in Google Maps"}
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -287,8 +304,19 @@ export default async function Home({
                     href="https://www.instagram.com/inka_alexmelendez"
                     target="_blank"
                     rel="noreferrer"
+                    className="icon-cta icon-cta--instagram"
+                    aria-label={
+                      locale === "es"
+                        ? "Abrir perfil de Instagram"
+                        : "Open Instagram profile"
+                    }
                   >
-                    @inka_alexmelendez
+                    <span className="icon-cta__glyph" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" role="img">
+                        <path d="M7.2 2.8h9.6a4.4 4.4 0 0 1 4.4 4.4v9.6a4.4 4.4 0 0 1-4.4 4.4H7.2a4.4 4.4 0 0 1-4.4-4.4V7.2a4.4 4.4 0 0 1 4.4-4.4Zm9.6 16a2 2 0 0 0 2-2V7.2a2 2 0 0 0-2-2H7.2a2 2 0 0 0-2 2v9.6a2 2 0 0 0 2 2h9.6Zm-4.8-11a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4Zm0 6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm4.9-6.73a1.02 1.02 0 1 1 0-2.04 1.02 1.02 0 0 1 0 2.04Z" />
+                      </svg>
+                    </span>
+                    <span className="icon-cta__text">@inka_alexmelendez</span>
                   </a>
                 </li>
               </ul>

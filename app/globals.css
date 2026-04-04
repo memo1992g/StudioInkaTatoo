@@ -627,6 +627,74 @@ video {
   gap: 12px;
 }
 
+.icon-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.icon-cta:hover,
+.icon-cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.icon-cta__glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.icon-cta__glyph svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.icon-cta__text {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.icon-cta--maps {
+  background: linear-gradient(
+    135deg,
+    rgba(66, 133, 244, 0.3),
+    rgba(15, 157, 88, 0.24)
+  );
+}
+
+.icon-cta--maps .icon-cta__glyph {
+  background: linear-gradient(145deg, #4285f4, #0f9d58);
+}
+
+.icon-cta--instagram {
+  background: linear-gradient(
+    135deg,
+    rgba(193, 53, 132, 0.28),
+    rgba(245, 96, 64, 0.24)
+  );
+}
+
+.icon-cta--instagram .icon-cta__glyph {
+  background: linear-gradient(145deg, #833ab4, #fd1d1d, #fcb045);
+}
+
 .contact-form {
   display: grid;
   gap: 14px;
