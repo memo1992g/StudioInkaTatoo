@@ -683,6 +683,18 @@ video {
   background: linear-gradient(145deg, #4285f4, #0f9d58);
 }
 
+.icon-cta--whatsapp {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 211, 102, 0.3),
+    rgba(7, 94, 84, 0.24)
+  );
+}
+
+.icon-cta--whatsapp .icon-cta__glyph {
+  background: linear-gradient(145deg, #25d366, #128c7e);
+}
+
 .icon-cta--instagram {
   background: linear-gradient(
     135deg,
