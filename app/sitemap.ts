@@ -1,6 +1,5 @@
+import { siteUrl } from "./seo-config";
 import { locales } from "./site-content";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export default function sitemap() {
   const now = new Date();

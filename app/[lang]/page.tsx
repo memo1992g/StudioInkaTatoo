@@ -2,9 +2,18 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import ContactForm from "../contact-form";
 import MobileNav from "../mobile-nav";
+import {
+  businessAddress,
+  businessGeo,
+  businessName,
+  googleMapsUrl,
+  instagramUrl,
+  logoUrl,
+  siteUrl,
+  whatsappNumber,
+} from "../seo-config";
 import ValuesMetrics from "../values-metrics";
 import {
-  getAlternateLocale,
   isValidLocale,
   siteContent,
   type Locale,
@@ -16,9 +25,6 @@ const works = [
   "/media/work-03.jpg",
   "/media/work-04.jpeg",
 ];
-
-const addressUrl =
-  "https://www.google.com/maps/search/?api=1&query=Calle+El+Pedregal+%2310,+Jardines+de+la+Hacienda,+Santa+Tecla,+Nueva+San+Salvador,+CP+1501,+1502";
 
 export default async function Home({
   params,
@@ -32,7 +38,6 @@ export default async function Home({
   }
 
   const locale = lang as Locale;
-  const alternateLocale = getAlternateLocale(locale);
   const content = siteContent[locale];
 
   const sectionIds =
@@ -55,22 +60,35 @@ export default async function Home({
   const schema = {
     "@context": "https://schema.org",
     "@type": "TattooParlor",
-    name: "Alex Melendez Professional Tattoo",
-    image: `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/branding/alex-melendez-logo-transparent.png`,
+    "@id": `${siteUrl}/${locale}#tattoo-parlor`,
+    name: businessName,
+    image: logoUrl,
+    logo: logoUrl,
     description: content.seo.description,
-    telephone: "+50371111664",
+    telephone: whatsappNumber,
+    url: `${siteUrl}/${locale}`,
+    inLanguage: locale,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Calle El Pedregal #10, Jardines de la Hacienda",
-      addressLocality: "Santa Tecla",
-      addressRegion: "La Libertad",
-      addressCountry: "SV",
-      postalCode: "1501, 1502",
+      ...businessAddress,
     },
-    areaServed: ["Santa Tecla", "San Salvador", "El Salvador"],
-    sameAs: ["https://www.instagram.com/inka_alexmelendez"],
-    url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/${locale}`,
-    inLanguage: locale,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: businessGeo.latitude,
+      longitude: businessGeo.longitude,
+    },
+    hasMap: googleMapsUrl,
+    areaServed: ["Santa Tecla", "San Salvador", "La Libertad", "El Salvador"],
+    sameAs: [instagramUrl],
+    makesOffer: content.services.items.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.description,
+      },
+    })),
   };
 
   return (
@@ -268,7 +286,7 @@ export default async function Home({
                 <li>
                   <strong>{content.contact.addressLabel}:</strong>{" "}
                   <a
-                    href={addressUrl}
+                    href={googleMapsUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="icon-cta icon-cta--maps"
@@ -312,7 +330,7 @@ export default async function Home({
                 <li>
                   <strong>{content.contact.instagramLabel}:</strong>{" "}
                   <a
-                    href="https://www.instagram.com/inka_alexmelendez"
+                    href={instagramUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="icon-cta icon-cta--instagram"
