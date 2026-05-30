@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { siteUrl } from "../seo-config";
 import {
   getAlternateLocale,
   isValidLocale,
@@ -6,8 +7,6 @@ import {
   siteContent,
   type Locale,
 } from "../site-content";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));

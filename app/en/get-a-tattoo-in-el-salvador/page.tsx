@@ -1,4 +1,14 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+import {
+  brandName,
+  businessAddress,
+  businessGeo,
+  businessName,
+  googleMapsUrl,
+  instagramUrl,
+  logoUrl,
+  siteUrl,
+  whatsappNumber,
+} from "../../seo-config";
 const pageUrl = `${siteUrl}/en/get-a-tattoo-in-el-salvador`;
 
 const faqItems = [
@@ -43,7 +53,7 @@ export const metadata = {
     description:
       "Custom tattoos in Santa Tecla, El Salvador. Premium process, strict hygiene, and direct WhatsApp booking.",
     url: pageUrl,
-    siteName: "Alex Melendez Inka",
+    siteName: brandName,
     locale: "en_US",
     type: "website",
   },
@@ -57,6 +67,32 @@ export const metadata = {
 };
 
 export default function GetATattooInElSalvadorPage() {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "@id": `${pageUrl}#tattoo-parlor`,
+    name: businessName,
+    image: logoUrl,
+    logo: logoUrl,
+    description: metadata.description,
+    telephone: whatsappNumber,
+    url: pageUrl,
+    inLanguage: "en",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      ...businessAddress,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: businessGeo.latitude,
+      longitude: businessGeo.longitude,
+    },
+    hasMap: googleMapsUrl,
+    areaServed: ["Santa Tecla", "San Salvador", "La Libertad", "El Salvador"],
+    sameAs: [instagramUrl],
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -70,11 +106,13 @@ export default function GetATattooInElSalvadorPage() {
     })),
   };
 
+  const schema = [localBusinessSchema, faqSchema];
+
   return (
     <main className="seo-landing">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       <section className="content-section intro-section">
